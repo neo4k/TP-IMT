@@ -2,14 +2,34 @@
   <div class="submit-form">
     <div v-if="!submitted">
 
-	<br><input type="text" class="" id="id" v-model="personne.id" name="" placeholder="ID"/><br>
-    <input type="text" class="" id="name" v-model="personne.name" name="" placeholder="NOM"/><br>
-	<input type="text" class="" id="surname" v-model="personne.surname" name="" placeholder="SURNOM"/><br>
-	<input type="text" class="" id="phone" v-model="personne.phone" name="" placeholder="TELEPHONE"/><br>
-	<input type="text" class="" id="city" v-model="personne.city" name="" placeholder="VILLE"/>
-      <!-- A COMPLETER -->
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="id" v-model="personne.id" >
+				<label for="floatingInput">Identification</label>
+			</div>
 
-      <br><button @click="creerPersonne" class="btn btn-success">Ajouter</button>
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="name" v-model="personne.name" >
+				<label for="floatingInput">Nom de Famille</label>
+			</div>
+
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="surname" v-model="personne.surname">
+				<label for="floatingInput">Prénom</label>
+			</div>
+
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="phone" v-model="personne.phone" >
+				<label for="floatingInput">Téléphone</label>
+			</div>
+
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="city" v-model="personne.city">
+				<label for="floatingInput">Ville</label>
+			</div>
+
+        <!-- A COMPLETER -->
+
+      <br><button @click="creerPersonne" class="btn btn-outline-primary">Ajouter</button>
     </div>
 
     <div v-else>

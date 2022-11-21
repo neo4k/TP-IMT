@@ -1,7 +1,7 @@
 <template>
   
   <ul>
-    <li class=""
+    <li class="list-group-item"
       :class="{ active: id == currentIndex }"
       v-for="(personne, id) in personnes"
       :key="id"
@@ -11,14 +11,14 @@
     </li>
   </ul>
 
-  <div v-if="currentPersonne">
-    {{ currentPersonne.name }}
-    {{ currentPersonne.surname }}
-    {{ currentPersonne.phone }}
-    {{ currentPersonne.city }}
-    
+<div v-if="currentPersonne">
+<h3>Prénom :</h3>{{ currentPersonne.surname }}
+<h3>Nom :</h3>{{ currentPersonne.name }}
+<h3>Téléphone :</h3>{{ currentPersonne.phone }}
+<h3>Ville :</h3>{{ currentPersonne.city }}
 
-    <router-link :to="'/personnes/' + currentPersonne.id" class="badge badge-warning">Modifier</router-link>
+<br>
+    <router-link :to="'/personnes/' + currentPersonne.id" class="btn btn-primary">Modifier</router-link>
   </div>
   <div v-else>
     <br />

@@ -1,32 +1,41 @@
 <template>
 
-  <div v-if="currentPersonne">
-    {{ currentPersonne.name }}
-    {{ currentPersonne.surname }}
-    {{ currentPersonne.phone }}
-    {{ currentPersonne.city }}
+	<div v-if="currentPersonne">
+		
+        <br>
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="id" v-model="currentPersonne.id" >
+					<label for="floatingInput">Identification</label>
+				</div>
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="name" v-model="currentPersonne.name" >
+					<label for="floatingInput">Nom de Famille</label>
+				</div>
 
-	<br><input type="text" class="" id="id" v-model="currentPersonne.id" name=""/><br>
-    <input type="text" class="" id="name" v-model="currentPersonne.name" name=""/><br>
-	<input type="text" class="" id="surname" v-model="currentPersonne.surname" name=""/><br>
-	<input type="text" class="" id="phone" v-model="currentPersonne.phone" name=""/><br>
-	<input type="text" class="" id="city" v-model="currentPersonne.city" name=""/>
-  </div>
-  <!-- A COMPLETER -->
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="surname" v-model="currentPersonne.surname">
+					<label for="floatingInput">Prénom</label>
+				</div>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="phone" v-model="currentPersonne.phone" >
+					<label for="floatingInput">Téléphone</label>
+				</div>
+
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control" id="city" v-model="currentPersonne.city">
+					<label for="floatingInput">Ville</label>
+				</div>
+		
+	</div>
 
     <!-- A INCLURE DANS LE FORM -->
-    <button class="badge badge-danger mr-2"
-      @click="deletePersonne"
-    >
+    <button class="btn btn-danger" @click="deletePersonne">
       Supprimer
     </button>
 
     <!-- A INCLURE DANS LE FORM -->
-    <button type="submit" class="badge badge-success"
-      @click="updatePersonne"
-    >
-      Modifier
-    </button>
+    <button type="submit" class="btn btn-warning" @click="updatePersonne"> Modifier </button>
     <p>{{ message }}</p>
 
 </template>

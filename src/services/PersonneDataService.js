@@ -20,7 +20,6 @@ class PersonneDataService {
       return http.delete(`/entree/${id}`);
   }
   
-  // A COMPLETER
 }
 
 export default new PersonneDataService();
